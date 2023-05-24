@@ -1,4 +1,27 @@
+@import url("sizes.css");
+
 img {
     /* Placeholder width to make semantic structure more visible */
     width: 20%;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    background-color: blue;
+    align-items: center;
+}
+
+header > .logo-image {
+    height: 50%;
+    width: auto;
+    margin-right: auto;
+}
+
+header > ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: var(--spacing-l);
 }
