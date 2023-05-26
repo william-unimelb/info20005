@@ -79,9 +79,23 @@ img {
 
 /* Icon */
 .icon {
-    width: auto;
-    height: var(--textsize-link);
-  }
+  width: auto;
+  height: var(--textsize-link);
+}
+
+/* Button */
+.button {
+    padding: 16px 64px 16px 64px;
+    font-size: var(--textsize-link);
+    background-color: var(--color-accent);
+    font-family: "Poppins", "Roboto", Helvetica, Arial, sans-serif;
+    border-radius: 8px;
+    color: var(--color-text);
+}
+
+.button:hover {
+    background-color: var(--color-accent-highlight);
+}
 
 /* Header */
 
@@ -109,16 +123,16 @@ header > ul {
 
 /* Hero */
 .hero {
-    background-color: var(--color-foreground);
-    color: var(--color-background);
-    border-radius: var(--border-radius);
+  background-color: var(--color-foreground);
+  color: var(--color-background);
+  border-radius: var(--border-radius);
 }
 
 .hero__image {
-    flex-basis: calc(50% - var(--column-gutter));
-    border-radius: var(--border-radius);
+  flex-basis: calc(50% - var(--column-gutter));
+  border-radius: var(--border-radius);
 }
 
 .hero__content {
-    padding: var(--spacing-xl);
+  padding: var(--spacing-xl);
 }

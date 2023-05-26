@@ -3,5 +3,7 @@
     --color-foreground-light: #CDE9C9;
     --color-interactive: #17530D;
     --color-accent: #FFD600;
+    --color-accent-highlight: #ffe66c;
     --color-background: white;
+    --color-text: black;
 }
