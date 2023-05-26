@@ -1,16 +1,62 @@
 @import url("sizes.css");
+@import url("colours.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap');
+
+/* Common elements */
+
+:root {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", "Roboto", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: var(--textsize-h1);
+}
+
+h2 {
+    font-size: var(--textsize-h2);
+}
+
+h3 {
+    font-size: var(--textsize-h3);
+}
 
 img {
     /* Placeholder width to make semantic structure more visible */
     width: 20%;
 }
 
+/* Links */
+.link {
+    font-size: var(--textsize-link);
+    font-family: "Poppins", "Roboto", Helvetica, Arial, sans-serif;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.link--normal {
+    color: var(--color-interactive);
+}
+
+.link--inverse {
+    color: var(--color-background);
+}
+
+/* Header */
+
 header {
     display: flex;
     flex-direction: row;
     height: 100px;
-    background-color: blue;
+    background-color: var(--color-foreground);
     align-items: center;
+    padding: 0 var(--page-margin) 0 var(--page-margin);
 }
 
 header > .logo-image {
@@ -24,4 +70,10 @@ header > ul {
     flex-direction: row;
     list-style-type: none;
     gap: var(--spacing-l);
+}
+
+/* Icon */
+.icon {
+    width: auto;
+    height: var(--textsize-link);
 }

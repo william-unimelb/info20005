@@ -1,4 +1,6 @@
 :root {
+    --page-margin: 10%;
+
     --spacing-l: 32px;
 
     --textsize-link: 1.5rem;
