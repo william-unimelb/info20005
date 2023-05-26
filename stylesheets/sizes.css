@@ -1,10 +1,16 @@
 :root {
-    --page-margin: 10%;
+    --page-margin-side: 10%;
+    --page-margin-top-bottom: 60px;
+
+    --column-gutter: 40px;
+
+    --border-radius: 8px;
 
     --spacing-l: 32px;
+    --spacing-xl: 40px;
 
     --textsize-link: 1.5rem;
     --textsize-h1: 3.75rem;
-    --textsize-h2: 2em;
-    --textsize-h3: 1.5em;
+    --textsize-h2: 2rem;
+    --textsize-h3: 1.5rem;
 }
