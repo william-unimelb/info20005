@@ -38,10 +38,13 @@ img {
 /* Page content */
 .page-content {
   margin: var(--page-margin-top-bottom) var(--page-margin-side);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
 }
 
-/* Layouts */
-/* Sidebar (based on Week 9 workshop) */
+/* Layouts (based on Week 9 workshop)*/
+/* Sidebar */
 .sidebar-container {
   display: flex;
   flex-direction: row;
@@ -57,6 +60,15 @@ img {
   flex-basis: 0;
   flex-grow: 999;
   min-width: 50%;
+}
+
+/* Cluster */
+.cluster {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
 }
 
 /* Links */
@@ -143,4 +155,17 @@ header > ul {
 .hero__content__button {
     /* Make the button always stay at the bottom */
     margin-top: auto;
+}
+
+/* Category card */
+.category-card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: var(--color-foreground-light);
+    gap: var(--spacing-xs);
+}
+
+.category-card__header {
+    width: 100%;
 }
