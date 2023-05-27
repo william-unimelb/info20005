@@ -14,8 +14,11 @@
     --spacing-xxl: 72px;
     --spacing-xxxl: 120px;
 
-    --textsize-link: 1.5rem;
-    --textsize-h1: 3.75rem;
-    --textsize-h2: 2rem;
-    --textsize-h3: 1.5rem;
+    --textsize-link: 1em;
+    --textsize-h1: 2.5em;
+    --textsize-h2: 1.33em;
+    --textsize-h3: 1em;
+    --textsize-small: 0.83em;
+
+    --textsize: 24px;
 }

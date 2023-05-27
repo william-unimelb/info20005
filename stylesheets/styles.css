@@ -6,6 +6,7 @@
 
 :root {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: var(--textsize);
 }
 
 h1,
@@ -79,6 +80,11 @@ img {
 .stack {
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.stack--row {
+  flex-direction: row;
 }
 
 /* Cluster */
@@ -150,6 +156,31 @@ header > ul {
   flex-direction: row;
   list-style-type: none;
   gap: var(--spacing-l);
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-foreground);
+  padding: var(--spacing-xxxl) var(--page-margin-side);
+  color: var(--color-background);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--column-gutter);
+}
+
+footer p {
+  font-size: var(--textsize-small);
+}
+
+footer .link {
+  font-size: var(--textsize-small);
+}
+
+.footer__icon-bar {
+  padding: 0;
+  margin-top: var(--spacing-s);
+  list-style-type: none;
+  justify-content: space-evenly;
 }
 
 /* Hero */
