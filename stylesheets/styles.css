@@ -35,12 +35,26 @@ img {
   width: 400px;
 }
 
+.p--inverse {
+  color: var(--color-background);
+}
+
+.h2--big {
+  /* H2 but with the size of h1 */
+  font-size: var(--textsize-h1);
+}
+
 /* Page content */
 .page-content {
-  margin: var(--page-margin-top-bottom) var(--page-margin-side);
+  margin: var(--page-margin-top-bottom) 0;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-xxxl);
+}
+
+.page-content > * {
+  /* Set the side margins here instead so it can be overwritten */
+  margin: 0 var(--page-margin-side);
 }
 
 /* Layouts (based on Week 9 workshop)*/
@@ -60,6 +74,11 @@ img {
   flex-basis: 0;
   flex-grow: 999;
   min-width: 50%;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Cluster */
@@ -101,7 +120,7 @@ img {
     font-size: var(--textsize-link);
     background-color: var(--color-accent);
     font-family: "Poppins", "Roboto", Helvetica, Arial, sans-serif;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     color: var(--color-text);
 }
 
@@ -143,6 +162,8 @@ header > ul {
 .hero__image {
   flex-basis: calc(50% - var(--column-gutter));
   border-radius: var(--border-radius);
+  height: 500px;
+  object-fit: cover;
 }
 
 .hero__content {
@@ -158,14 +179,57 @@ header > ul {
 }
 
 /* Category card */
-.category-card {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    background-color: var(--color-foreground-light);
-    gap: var(--spacing-xs);
+.product-categories {
+  /* 4 rows grid that collapses into 2x2 */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--column-gutter);
 }
 
-.category-card__header {
-    width: 100%;
+.product-categories__card {
+  background-color: var(--color-foreground-light);
+  border-radius: var(--border-radius);
+}
+
+.product-categories__image {
+  border-radius: var(--border-radius);
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+}
+
+.product-categories__card__header {
+  margin: var(--spacing-s);
+}
+
+
+/* Banner with background */
+.background-banner {
+  background-color: var(--color-foreground);
+  margin: 0;
+  padding: 0 var(--page-margin-side);
+  padding-top: var(--spacing-xxxl);
+  padding-bottom: var(--spacing-xxxl);
+  gap: var(--spacing-xl);
+}
+
+/* Featured products */
+.featured-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--column-gutter);
+}
+
+.featured-products__card {
+  flex-basis: 400px;
+  background-color: var(--color-foreground-light);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xl);
+  gap: var(--spacing-xs);
+}
+
+.featured-products__card__image {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  object-fit: cover;
 }
