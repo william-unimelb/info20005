@@ -99,11 +99,11 @@ img {
 
 /* Cluster */
 .cluster {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 }
 
 /* Links */
@@ -133,16 +133,26 @@ img {
 
 /* Button */
 .button {
-    padding: 16px 64px 16px 64px;
-    font-size: var(--textsize-link);
-    background-color: var(--color-accent);
-    font-family: "Poppins", "Roboto", Helvetica, Arial, sans-serif;
-    border-radius: var(--border-radius);
-    color: var(--color-text);
+  padding: 16px 64px 16px 64px;
+  font-size: var(--textsize-link);
+  background-color: var(--color-accent);
+  font-family: "Poppins", "Roboto", Helvetica, Arial, sans-serif;
+  border-radius: var(--border-radius);
+  color: var(--color-text);
+  border: none;
 }
 
 .button:hover {
-    background-color: var(--color-accent-highlight);
+  background-color: var(--color-accent-highlight);
+}
+
+.button--inverse {
+  color: var(--color-accent);
+  background-color: var(--color-interactive);
+}
+
+.button--inverse:hover {
+  background-color: var(--color-foreground);
 }
 
 /* Options bar (for list of options e.g. filter, sorting etc) */
@@ -226,8 +236,8 @@ footer .link {
 }
 
 .hero__content__button {
-    /* Make the button always stay at the bottom */
-    margin-top: auto;
+  /* Make the button always stay at the bottom */
+  margin-top: auto;
 }
 
 /* Home page */
@@ -255,7 +265,6 @@ footer .link {
 .product-categories__card__header {
   margin: var(--spacing-s);
 }
-
 
 /* Banner with background */
 .background-banner {
@@ -331,4 +340,21 @@ footer .link {
 
 .product-card:hover .link {
   text-decoration: underline;
+}
+
+/* Search */
+.search-bar {
+  width: auto;
+  border: 1px solid var(--color-foreground);
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-background);
+}
+
+.search-bar__input {
+  flex-grow: 1;
+  border: none;
+  background: none;
+  padding: 0 var(--spacing-s);
 }
