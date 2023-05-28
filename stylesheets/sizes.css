@@ -1,6 +1,7 @@
 :root {
     --page-margin-side: 10%;
-    --page-margin-top-bottom: 60px;
+    --page-margin-top: 160px;
+    --page-margin-bottom: 60px;
 
     --column-gutter: 40px;
 
