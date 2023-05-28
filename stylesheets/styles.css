@@ -50,6 +50,11 @@ img {
   margin: var(--page-margin-top) 0 var(--page-margin-bottom) 0;
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.page-content--home {
+  /* Larger spacing on homepage */
   gap: var(--spacing-xxxl);
 }
 
@@ -77,6 +82,7 @@ img {
   min-width: 50%;
 }
 
+/* Stack */
 .stack {
   display: flex;
   flex-direction: column;
@@ -85,6 +91,10 @@ img {
 
 .stack--row {
   flex-direction: row;
+}
+
+.stack--centred {
+  align-items: center;
 }
 
 /* Cluster */
@@ -100,6 +110,7 @@ img {
 .link {
   font-size: var(--textsize-link);
   font-family: "Poppins", "Roboto", Helvetica, Arial, sans-serif;
+  color: var(--color-interactive);
 }
 
 .link:hover {
@@ -132,6 +143,11 @@ img {
 
 .button:hover {
     background-color: var(--color-accent-highlight);
+}
+
+/* Options bar (for list of options e.g. filter, sorting etc) */
+.options-bar {
+  gap: var(--spacing-l);
 }
 
 /* Header */
@@ -178,6 +194,7 @@ footer p {
 
 footer .link {
   font-size: var(--textsize-small);
+  color: var(--color-background);
 }
 
 .footer__icon-bar {
@@ -212,6 +229,8 @@ footer .link {
     /* Make the button always stay at the bottom */
     margin-top: auto;
 }
+
+/* Home page */
 
 /* Category card */
 .product-categories {
@@ -267,4 +286,49 @@ footer .link {
   aspect-ratio: 1 / 1;
   width: 100%;
   object-fit: cover;
+}
+
+/* Catalogue page */
+
+/* Catalogue icon container */
+.catalogue-icon-container {
+  align-items: flex-end;
+  width: auto;
+  justify-content: space-between;
+}
+
+.categories {
+  flex-basis: 20%;
+  min-width: 200px;
+}
+
+/* Product catalogue */
+.catalogue {
+  gap: var(--spacing-xxl);
+}
+
+/* Product card container */
+.product-card-container {
+  gap: var(--column-gutter);
+}
+
+/* Product card */
+.product-card {
+  width: 260px;
+  gap: 0;
+}
+
+.product-card__image {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.product-card:hover {
+  cursor: pointer;
+}
+
+.product-card:hover .link {
+  text-decoration: underline;
 }
