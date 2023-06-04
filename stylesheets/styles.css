@@ -191,11 +191,18 @@ img {
   justify-content: center;
 }
 
-.overlay--left {
+.overlay--right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex-direction: row;
+}
+
+.overlay--top {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
 
 .overlay--hidden {
@@ -505,4 +512,17 @@ footer .link {
 
 .cart__table__price {
   text-align: end;
+}
+
+/* Search popup */
+.search-popup {
+  background-color: var(--color-foreground);
+  padding: var(--spacing-xxl) var(--page-margin-side);
+  width: 100%;
+  color: var(--color-background);
+  gap: var(--spacing-s);
+}
+
+.search-popup__link {
+  text-align: center;
 }

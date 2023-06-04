@@ -147,7 +147,7 @@
       </div>
     </div>
     <!-- Overlay for cart -->
-    <div class="overlay overlay--left">
+    <div class="overlay overlay--right overlay--hidden">
       <div class="cart stack">
         <h1>Cart</h1>
         <p>Your cart is empty!</p>
@@ -197,6 +197,18 @@
           </table>
           <a class="button">Proceed to Checkout</a>
         </div>
+        <img class="overlay__close" src="images/icons/close.svg">
+      </div>
+    </div>
+    <!-- Overlay for search -->
+    <div class="overlay overlay--top">
+      <div class="search-popup stack">
+        <h1>Search</h1>
+        <form class="search-bar">
+          <input class="search-bar__input" type="search" placeholder="Enter your search query here">
+          <input class="button" type="submit" value="Search">
+        </form>
+        <a class="link link--accent search-popup__link">Advanced Search</a>
         <img class="overlay__close" src="images/icons/close.svg">
       </div>
     </div>
