@@ -364,7 +364,7 @@ footer .link {
 }
 
 .categories {
-  flex-basis: 20%;
+  flex-basis: 25%;
   min-width: 200px;
 }
 
@@ -376,11 +376,17 @@ footer .link {
 /* Product card container */
 .product-card-container {
   gap: var(--column-gutter);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.product-card-container--partial {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 /* Product card */
 .product-card {
-  width: 260px;
+  width: 100%;
   gap: 0;
 }
 
