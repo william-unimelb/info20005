@@ -30,6 +30,10 @@ h2 {
 h3 {
   font-size: var(--textsize-h3);
 }
+img {
+  /* Placeholder width to make semantic structure more visible */
+  width: 400px;
+}
 
 .p--inverse {
   color: var(--color-background);
