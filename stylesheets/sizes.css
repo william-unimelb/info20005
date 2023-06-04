@@ -7,13 +7,15 @@
 
     --border-radius: 8px;
 
-    --spacing-xs: 8px;
-    --spacing-s: 16px;
-    --spacing-m: 24px;
-    --spacing-l: 32px;
-    --spacing-xl: 40px;
-    --spacing-xxl: 72px;
-    --spacing-xxxl: 120px;
+    --spacing-base: 8px;
+
+    --spacing-xs: calc(var(--spacing-base) * 1);
+    --spacing-s: calc(var(--spacing-base) * 2);
+    --spacing-m: calc(var(--spacing-base) * 3);
+    --spacing-l: calc(var(--spacing-base) * 4);
+    --spacing-xl: calc(var(--spacing-base) * 5);
+    --spacing-xxl: calc(var(--spacing-base) * 9);
+    --spacing-xxxl: calc(var(--spacing-base) * 15);
 
     --icon-size: 1.5em;
 
@@ -24,4 +26,14 @@
     --textsize-small: 0.83em;
 
     --textsize: 24px;
+}
+
+/* Breakpoints for smaller screens */
+@media (max-width: 1024px) {
+    :root {
+        --page-margin-top: 116px;
+        --column-gutter: 16px;
+        --textsize: 14px;
+        --spacing-base: 4px;
+    }
 }
