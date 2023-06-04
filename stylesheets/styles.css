@@ -549,9 +549,13 @@ footer .link {
   text-align: center;
 }
 
-/* Hide elements on desktop but not mobile */
-.hide--desktop {
-  display: none;
+/* Breakpoint for desktop screens */
+@media (min-width: 1025px) {
+  /* Hide elements on desktop but not mobile */
+  .hide--desktop {
+    display: none;
+  }
+
 }
 
 /* Breakpoints for smaller screens */
@@ -560,10 +564,6 @@ footer .link {
   /* Hide element */
   .hide--mobile {
     display: none;
-  }
-
-  .hide--desktop {
-    display: block;
   }
 
   header {
