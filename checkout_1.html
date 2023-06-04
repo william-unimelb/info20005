@@ -1,63 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Order Confirmation</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="stylesheets/reset.css" />
+  <link rel="stylesheet" href="stylesheets/styles.css" />
+  <title>Order1</title>
 </head>
+
 <body>
   <header>
-    <!-- Header content goes here -->
+    <img src="images/Logo.svg" class="logo-image header__logo" />
+    <ul>
+      <li><a class="link link--inverse">Catalogue</a></li>
+      <li><a class="link link--inverse">Gallery</a></li>
+      <li><a class="link link--inverse">About Us</a></li>
+    </ul>
+    <ul>
+      <li>
+        <a href="/"><img class="icon" src="images/icons/search.svg" alt="search"></a>
+      </li>
+      <li>
+        <a href="/" class="cart-count"><img class="icon" src="images/icons/cart.svg" alt="shopping cart" />
+          <span class="oder-count">1</span>
+      </li>
+      <li>
+        <a href="/"><img class="icon" src="images/icons/login.svg" alt="login"></a>
+      </li>
+    </ul>
   </header>
-
-  <main>
-    <h1>Check out</h1>
-
-    <section>
+  <div class="page-content page-content--home">
+    <div class="checkout-container">
+      <h1 class="text-center">Check Out</h1>
       <h2>Items</h2>
-      <div class="chosen-item">
-        <!-- Chosen item details and quantity -->
-        <p>Chosen item</p>
-        <p>Number of the item (display as "xnumber")</p>
+      <div class="cluster checkout-cluster">
+        <div class="stack stack--centred stack--row stack--full-width">
+          <p>Green Toast</p>
+        </div>
+        <div class="stack stack--centred stack--row options-bar">
+          <div class="stack stack--centred stack--row">
+            <a class="">x1</a>
+          </div>
+          <div class="stack stack--centred stack--row">
+            <a class="">$20.00</a>
+          </div>
+        </div>
       </div>
-    </section>
-
-    <section>
       <h2>Delivery Details</h2>
-      <form>
-        <label for="first-name">First Name*</label>
-        <input type="text" id="first-name" required>
 
-        <label for="last-name">Last Name</label>
-        <input type="text" id="last-name">
+      <form action="/">
+        <div class="form-container">
+          <div class="cluster field-container">
+            <div class="input-con">
+              <label for="fname">First Name*</label>
+              <input type="text" class="input-field">
+            </div>
+            <div class="input-con">
+              <label for="lname">Last Name*</label>
+              <input type="text" class="input-field">
+            </div>
 
-        <label for="mobile-number">Mobile Number</label>
-        <input type="tel" id="mobile-number">
+          </div>
+          <div>
+            <label for="email">Email*</label>
+            <input type="text" class="input-field">
+          </div>
+          <div>
+            <label for="pbone">Phone Number*</label>
+            <input type="text" class="input-field">
+          </div>
+          <div>
+            <label for="add1">Address Line 1*</label>
+            <input type="text" class="input-field">
+          </div>
+          <div>
+            <label for="add2">Address Line 2*</label>
+            <input type="text" class="input-field">
+          </div>
+          <div class="cluster">
+            <div class="input-con">
+              <label for="city">City*</label>
+              <input type="text" class="input-field">
+            </div>
+            <div class="input-con">
+              <label for="state">State*</label>
+              <input type="text" class="input-field">
+            </div>
 
-        <label for="address-line-1">Address Line 1*</label>
-        <input type="text" id="address-line-1" required>
+          </div>
+          <div class="cluster">
+            <div class="input-con">
+              <label for="country">Country</label>
+              <input type="text" class="input-field">
+            </div>
+            <div>
+              <label for="post">Postcode*</label>
+              <input type="text" class="input-field">
+            </div>
 
-        <label for="address-line-2">Address Line 2*</label>
-        <input type="text" id="address-line-2" required>
+          </div>
+        </div>
+        <div class="submit-btn">
+          <input class="button button--inverse" type="submit" value="Next">
+        </div>
 
-        <label for="city">City</label>
-        <input type="text" id="city">
-
-        <label for="state">State</label>
-        <input type="text" id="state">
-
-        <label for="country">Country</label>
-        <input type="text" id="country">
-
-        <label for="postcode">Postcode</label>
-        <input type="text" id="postcode">
       </form>
-    </section>
-
-    <button type="button" id="next-button">Next</button>
-  </main>
-
-  <footer>
-    <!-- Footer content goes here -->
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="stack">
+      <img src="images/Logo.svg" />
+      <ul class="stack stack--row footer__icon-bar">
+        <li><a href="/"><img class="icon" src="images/icons/facebook.svg" alt="facebook"></a></li>
+        <li><a href="/"><img class="icon" src="images/icons/instagram.svg" alt="instagram"></a></li>
+        <li><a href="/"><img class="icon" src="images/icons/whatsapp.svg" alt="whatsapp"></a></li>
+        <li><a href="/"><img class="icon" src="images/icons/youtube.svg" alt="youtube"></a></li>
+      </ul>
+    </div>
+    <div class="stack">
+      <h2>Contact</h2>
+      <p>RMIT University - 124 La Trobe Street,</p>
+      <p>Melbourne VIC 3000.</p>
+      <p>info@pearsonmurphy.com.au</p>
+      <p>03 9639 2777</p>
+    </div>
+    <div class="stack">
+      <h2>Information</h2>
+      <a class="link">Contact Us</a>
+      <a class="link ">About Us</a>
+      <a class="link">Location</a>
+      <a class="link">Booking</a>
+    </div>
+    <div class="stack">
+      <h2>More</h2>
+      <a class="link">Other information</a>
+    </div>
   </footer>
 </body>
+
 </html>
