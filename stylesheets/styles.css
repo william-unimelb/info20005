@@ -124,6 +124,10 @@ img {
   color: var(--color-interactive);
 }
 
+.link--text {
+  color: var(--color-text);
+}
+
 .link--inverse {
   color: var(--color-background);
 }
@@ -317,6 +321,7 @@ footer .link {
   display: flex;
   flex-direction: column;
   align-items: start;
+  gap: var(--spacing-m);
 }
 
 .hero__content__space {
