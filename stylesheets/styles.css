@@ -511,6 +511,7 @@ footer .link {
 }
 
 .cart__item__element {
+  width: 0;
   flex-basis: 0;
   flex-grow: 1;
   height: 100%;
