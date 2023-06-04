@@ -146,50 +146,54 @@
       </div>
     </div>
     <div class="overlay overlay--left">
-      <div>
+      <div class="cart stack">
         <h1>Cart</h1>
         <p>Your cart is empty!</p>
-        <div>
-          <div>
-            <img >
-            <div>
+        <div class="stack cart__container">
+          <div class="stack stack--row stack--centred cart__item stack">
+            <img class="cart__item__element cart__item__img" src="images/pexels-lisa-fotios-1351238.jpg">
+            <div class="cart__item__element stack stack--distribute">
               <h2>Food Name</h2>
-              <form>
-                <input>
+              <form class="stack stack--row stack--centred">
+                <img src="images/icons/add.svg" class="icon">
+                <input class="cart__item__input">
+                <img src="images/icons/subtract.svg" class="icon">
               </form>
+              <p>$12.00 ($12.00ea)</p>
             </div>
-            <img src="images/icons/delete.svg">
+            <img src="images/icons/delete.svg" class="icon">
           </div>
-          <div class="stack stack--centred stack--row options-bar">
+          <span class="cart__space"></span>
+          <div class="stack stack--centred stack--row options-bar cart__navigation">
             <div class="stack stack--centred stack--row stack--full-width">
-              <img class="icon" src="images/icons/left.svg" />
-              <a class="link">Prev</a>
+              <img class="icon" src="images/icons/left_accent.svg" />
+              <a class="link link--accent">Prev</a>
             </div>
-            <p>Page 1 of 3</p>
+            <p>Page 1 of 1</p>
             <div class="stack stack--centred stack--row">
-              <a class="link">Next</a>
-              <img class="icon" src="images/icons/right.svg" />
+              <a class="link link--accent">Next</a>
+              <img class="icon" src="images/icons/right_accent.svg" />
             </div>
           </div>
           <table>
             <tr>
               <td><p>Subtotal</p></td>
-              <td><p>$12.00</p></td>
+              <td><p class="cart__table__price">$12.00</p></td>
             </tr>
             <tr>
               <td><p>GST Included</p></td>
-              <td><p>$1.02</p></td>
+              <td><p class="cart__table__price">$1.02</p></td>
             </tr>
             <tr>
               <td><p>Delivery</p></td>
-              <td><p>$0.00</p></td>
+              <td><p class="cart__table__price">$0.00</p></td>
             </tr>
             <tr>
-              <td><p>Total</p></td>
-              <td><p>$12.00</p></td>
+              <td><h3>Total</h3></td>
+              <td><h3 class="cart__table__price">$12.00</h3></td>
             </tr>
           </table>
-          <a>Proceed to Checkout</a>
+          <a class="button">Proceed to Checkout</a>
         </div>
 
       </div>
