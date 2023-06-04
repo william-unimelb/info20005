@@ -10,27 +10,22 @@
   </head>
   <body>
     <header>
+      <img class="hamburger-menu icon hide--desktop" src="images/icons/hamburger-menu.svg" alt="menu">
       <img src="images/Logo.svg" class="logo-image header__logo" />
-      <ul>
+      <ul class="hide--mobile">
         <li><a class="link link--inverse">Catalogue</a></li>
         <li><a class="link link--inverse">Gallery</a></li>
         <li><a class="link link--inverse">About Us</a></li>
       </ul>
       <ul>
         <li>
-          <a href="/"
-            ><img class="icon" src="images/icons/search.svg" alt="search"
-          /></a>
+          <a href="/"><img class="icon" src="images/icons/search.svg" alt="search"></a>
         </li>
         <li>
-          <a href="/"
-            ><img class="icon" src="images/icons/cart.svg" alt="shopping cart"
-          /></a>
+          <a href="/"><img class="icon" src="images/icons/cart.svg" alt="shopping cart"></a>
         </li>
-        <li>
-          <a href="/"
-            ><img class="icon" src="images/icons/login.svg" alt="login"
-          /></a>
+        <li class="hide--mobile">
+          <a href="/"><img class="icon" src="images/icons/login.svg" alt="login"></a>
         </li>
       </ul>
     </header>
@@ -48,8 +43,12 @@
           </div>
         </div>
       </div>
+      <div class="stack stack--row stack--distribute clickable hide--desktop">
+        <a class="link">Category: All</a>
+        <img class="icon" src="images/icons/down.svg" />
+      </div>
       <div class="sidebar-container">
-        <div class="sidebar-container__sidebar stack categories">
+        <div class="sidebar-container__sidebar stack categories hide--mobile">
           <h2>Categories</h2>
           <a class="link">All</a>
           <a class="link">Breakfast</a>
@@ -213,32 +212,13 @@
       </div>
     </div>
     <footer class="footer">
-      <div class="stack">
+      <div class="stack footer__logo">
         <img src="images/Logo.svg" />
         <ul class="stack stack--row footer__icon-bar">
-          <li>
-            <a href="/"
-              ><img class="icon" src="images/icons/facebook.svg" alt="facebook"
-            /></a>
-          </li>
-          <li>
-            <a href="/"
-              ><img
-                class="icon"
-                src="images/icons/instagram.svg"
-                alt="instagram"
-            /></a>
-          </li>
-          <li>
-            <a href="/"
-              ><img class="icon" src="images/icons/whatsapp.svg" alt="whatsapp"
-            /></a>
-          </li>
-          <li>
-            <a href="/"
-              ><img class="icon" src="images/icons/youtube.svg" alt="youtube"
-            /></a>
-          </li>
+          <li><a href="/"><img class="icon" src="images/icons/facebook.svg" alt="facebook" ></a></li>
+          <li><a href="/"><img class="icon" src="images/icons/instagram.svg" alt="instagram" ></a></li>
+          <li><a href="/"><img class="icon" src="images/icons/whatsapp.svg" alt="whatsapp" ></a></li>
+          <li><a href="/"><img class="icon" src="images/icons/youtube.svg" alt="youtube" ></a></li>
         </ul>
       </div>
       <div class="stack">
@@ -251,7 +231,7 @@
       <div class="stack">
         <h2>Information</h2>
         <a class="link">Contact Us</a>
-        <a class="link">About Us</a>
+        <a class="link ">About Us</a>
         <a class="link">Location</a>
         <a class="link">Booking</a>
       </div>
