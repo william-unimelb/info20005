@@ -214,6 +214,13 @@ img {
   justify-content: start;
 }
 
+.overlay--left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
 .overlay--hidden {
   display: none;
 }
@@ -549,6 +556,17 @@ footer .link {
 
 .search-popup__link {
   text-align: center;
+}
+
+/* Mobile menu popup */
+.mobile-menu-popup {
+  background-color: var(--color-foreground);
+  width: 50%;
+  height: 100%;
+  color: var(--color-background);
+  padding: var(--spacing-xl) var(--spacing-xxl);
+  gap: var(--spacing-s);
+  position: relative;
 }
 
 /* Breakpoint for desktop screens */
