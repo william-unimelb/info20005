@@ -33,7 +33,7 @@
     :root {
         --page-margin-top: 116px;
         --column-gutter: 16px;
-        --textsize: 14px;
+        --textsize: 16px;
         --spacing-base: 4px;
     }
 }

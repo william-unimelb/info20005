@@ -40,10 +40,6 @@ h3 {
   font-size: var(--textsize-h1);
 }
 
-img {
-  width: 400px;
-}
-
 /* Page content */
 .page-content {
   margin: var(--page-margin-top) 0 var(--page-margin-bottom) 0;
@@ -267,6 +263,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--column-gutter);
+  align-items: center;
 }
 
 footer p {
@@ -285,6 +282,10 @@ footer .link {
   justify-content: space-evenly;
 }
 
+.footer__logo {
+ width: 100%;
+}
+
 /* Hero */
 .hero {
   background-color: var(--color-foreground);
@@ -297,6 +298,7 @@ footer .link {
   border-radius: var(--border-radius);
   height: 500px;
   object-fit: cover;
+  min-width: 500px;
 }
 
 .hero__content {
@@ -306,9 +308,13 @@ footer .link {
   align-items: start;
 }
 
-.hero__content__button {
+.hero__content__space {
   /* Make the button always stay at the bottom */
-  margin-top: auto;
+  flex-grow: 1;
+}
+
+.hero__content__button {
+  margin-top: var(--spacing-xl);
 }
 
 /* Home page */
@@ -537,4 +543,77 @@ footer .link {
 
 .search-popup__link {
   text-align: center;
+}
+
+/* Hide elements on desktop but not mobile */
+.hide--desktop {
+  display: none;
+}
+
+/* Breakpoints for smaller screens */
+@media (max-width: 1024px) {
+
+  /* Hide element */
+  .hide--mobile {
+    display: none;
+  }
+
+  .hide--desktop {
+    display: block;
+  }
+
+  header {
+    padding-top: var(--spacing-xl);
+    justify-content: space-between;
+  }
+
+  header .icon {
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  header .hamburger-menu {
+    width: 2em;
+    height: 2em;
+  }
+
+  .header__logo {
+    /* Always centre the header logo */
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-xxl);
+  }
+
+  .button {
+    padding: 4px 16px;
+  }
+  
+  .hero__image {
+    height: 300px;
+    min-width: 80%;
+  }
+
+  .product-categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero__content .button {
+    align-self: center;
+  }
+
+  .footer__logo {
+    width: 50%;
+   }
+   
 }
