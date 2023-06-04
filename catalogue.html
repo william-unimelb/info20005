@@ -120,20 +120,29 @@
         </div>
       </div>
     </div>
-    <div class="overlay">
-      <div class="sidebar-container">
-        <img class="sidebar-container__sidebar" src="images/pexels-lisa-fotios-1351238.jpg">
-        <div class="sidebar-container__not-sidebar">
-          <h1>Green Toast</h1>
-          <p>$12.00</p>
-          <p>This toast is made with your choice of freshly baked bread, whether it's our signature sourdough and smooth ripe avacados.</p>
-          <p>Vegetarian</p>
-          <form>
+    <div class="overlay overlay--center">
+      <div class="sidebar-container product-page">
+        <img class="sidebar-container__sidebar product-page__image" src="images/pexels-lisa-fotios-1351238.jpg">
+        <div class="sidebar-container__not-sidebar product-page__description stack stack--full-width">
+          <div class="stack stack--full-width">
+            <h1>Green Toast</h1>
+            <p class="product-page__price-tag">$12.00</p>
+            <p>This toast is made with your choice of freshly baked bread, whether it's our signature sourdough and smooth ripe avacados.</p>
+            <p>Vegetarian</p>
+          </div>
+          <form class="stack stack--full-width product-page__quantity-form">
             <h2>Quantity</h2>
-            <div><a>-10</a><a>-1</a><input><a>+1</a><a>+10</a></div>
+            <div class="stack stack--row product-page__quantity-form__container">
+              <a class="button button--narrow">-10</a>
+              <a class="button button--narrow">-1</a>
+              <input class="product-page__quantity-form__input">
+              <a class="button button--narrow">+1</a>
+              <a class="button button--narrow">+10</a>
+            </div>
             <input class="button" type="submit" value="Add to Cart">
           </form>
         </div>
+        <img class="product-page__close" src="images/icons/close.svg">
       </div>
     </div>
     <footer class="footer">
