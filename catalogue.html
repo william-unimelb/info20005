@@ -6,23 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheets/reset.css" />
     <link rel="stylesheet" href="stylesheets/styles.css" />
+    <script src="scripts/popups.js"></script>
     <title>Catalogue</title>
   </head>
   <body>
     <header>
-      <img class="hamburger-menu icon hide--desktop" src="images/icons/hamburger-menu.svg" alt="menu">
-      <img src="images/Logo.svg" class="logo-image header__logo" />
+      <img class="hamburger-menu icon hide--desktop clickable" src="images/icons/hamburger-menu.svg" alt="menu" onclick="showMenu()">
+      <a href="/" class="logo-image header__logo"><img src="images/Logo.svg" class="header__logo"/></a>
       <ul class="hide--mobile">
-        <li><a class="link link--inverse">Catalogue</a></li>
-        <li><a class="link link--inverse">Gallery</a></li>
-        <li><a class="link link--inverse">About Us</a></li>
+        <li><a class="link link--inverse" href="/catalogue">Catalogue</a></li>
+        <li><a class="link link--inverse" href="/">Gallery</a></li>
+        <li><a class="link link--inverse" href="/">About Us</a></li>
       </ul>
       <ul>
         <li>
-          <a href="/"><img class="icon" src="images/icons/search.svg" alt="search"></a>
+          <a class="clickable" onclick="showSearch()"><img class="icon" src="images/icons/search.svg" alt="search"></a>
         </li>
         <li>
-          <a href="/"><img class="icon" src="images/icons/cart.svg" alt="shopping cart"></a>
+          <a class="clickable" onclick="showCart()"><img class="icon" src="images/icons/cart.svg" alt="shopping cart"></a>
         </li>
         <li class="hide--mobile">
           <a href="/"><img class="icon" src="images/icons/login.svg" alt="login"></a>
@@ -58,42 +59,42 @@
         </div>
         <div class="sidebar-container__not-sidebar catalogue stack stack--centred">
           <div class="product-card-container product-card-container--partial">
-            <div class="stack stack--centred product-card clickable">
+            <div class="stack stack--centred product-card clickable" onclick="showProduct()">
               <img class="product-card__image" src="images/pexels-lisa-fotios-1351238.jpg" />
               <a class="link">Food name</a>
               <p>$12.00</p>
             </div>
-            <div class="stack stack--centred product-card clickable">
+            <div class="stack stack--centred product-card clickable" onclick="showProduct()">
               <img class="product-card__image" src="images/pexels-ella-olsson-1640769.jpg" />
               <a class="link">Food name</a>
               <p>$12.00</p>
             </div>
-            <div class="stack stack--centred product-card clickable">
+            <div class="stack stack--centred product-card clickable" onclick="showProduct()">
               <img class="product-card__image" src="images/pexels-geraud-pfeiffer-6605397-copy.jpg" />
               <a class="link">Food name</a>
               <p>$12.00</p>
             </div>
-            <div class="stack stack--centred product-card clickable">
+            <div class="stack stack--centred product-card clickable" onclick="showProduct()">
               <img class="product-card__image" src="images/pexels-tranmautritam-98873-copy.jpg" />
               <a class="link">Food name</a>
               <p>$12.00</p>
             </div>
-            <div class="stack stack--centred product-card clickable">
+            <div class="stack stack--centred product-card clickable" onclick="showProduct()">
               <img class="product-card__image" src="images/pexels-polina-tankilevitch-3872373.jpg" />
               <a class="link">Food name</a>
               <p>$12.00</p>
             </div>
-            <div class="stack stack--centred product-card clickable">
+            <div class="stack stack--centred product-card clickable" onclick="showProduct()">
               <img class="product-card__image" src="images/pexels-cats-coming-1543800.jpg" />
               <a class="link">Food name</a>
               <p>$12.00</p>
             </div>
-            <div class="stack stack--centred product-card clickable">
+            <div class="stack stack--centred product-card clickable" onclick="showProduct()">
               <img class="product-card__image" src="images/pexels-polina-tankilevitch-4110006-copy.jpg" />
               <a class="link">Food name</a>
               <p>$12.00</p>
             </div>
-            <div class="stack stack--centred product-card clickable">
+            <div class="stack stack--centred product-card clickable" onclick="showProduct()">
               <img class="product-card__image" src="images/pexels-rajesh-tp-1633572.jpg" />
               <a class="link">Food name</a>
               <p>$12.00</p>
@@ -120,12 +121,13 @@
       </div>
     </div>
     <!-- Overlay for product -->
-    <div class="overlay overlay--center overlay--hidden">
+    <div class="overlay overlay--center overlay--hidden" id="product-overlay" >
+      <div class="overlay__exit" onclick="hideProduct()"></div>
       <div class="sidebar-container product-page">
         <img class="sidebar-container__sidebar product-page__image" src="images/pexels-lisa-fotios-1351238.jpg">
         <div class="sidebar-container__not-sidebar product-page__description stack stack--full-width">
           <div class="stack stack--full-width">
-            <h1>Green Toast</h1>
+            <h2 class="h2--big">Green Toast</h2>
             <p class="product-page__price-tag">$12.00</p>
             <p>This toast is made with your choice of freshly baked bread, whether it's our signature sourdough and smooth ripe avacados.</p>
             <p>Vegetarian</p>
@@ -142,13 +144,14 @@
             <input class="button" type="submit" value="Add to Cart">
           </form>
         </div>
-        <img class="overlay__close" src="images/icons/close.svg">
+        <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideProduct()">
       </div>
     </div>
     <!-- Overlay for cart -->
-    <div class="overlay overlay--right overlay--hidden">
+    <div class="overlay overlay--right overlay--hidden" id="cart-overlay">
+      <div class="overlay__exit" onclick="hideCart()"></div>
       <div class="cart stack">
-        <h1>Cart</h1>
+        <h2 class="h2--big">Cart</h2>
         <p>Your cart is empty!</p>
         <div class="stack cart__container">
           <div class="stack stack--row stack--centred cart__item stack">
@@ -196,30 +199,32 @@
           </table>
           <a class="button">Proceed to Checkout</a>
         </div>
-        <img class="overlay__close" src="images/icons/close.svg">
+        <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideCart()">
       </div>
     </div>
     <!-- Overlay for search -->
-    <div class="overlay overlay--top overlay--hidden">
+    <div class="overlay overlay--top overlay--hidden" id="search-overlay">
+      <div class="overlay__exit" onclick="hideSearch()"></div>
       <div class="search-popup stack">
-        <h1>Search</h1>
+        <h2 class="h2--big">Search</h2>
         <form class="search-bar">
           <input class="search-bar__input" type="search" placeholder="Enter your search query here">
           <input class="button" type="submit" value="Search">
         </form>
         <a class="link link--accent search-popup__link">Advanced Search</a>
-        <img class="overlay__close" src="images/icons/close.svg">
+        <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideSearch()">
       </div>
     </div>
     <!-- Overlay for mobile menu -->
-    <div class="overlay overlay--left overlay--hidden">
+    <div class="overlay overlay--left overlay--hidden" id="menu-overlay">
+      <div class="overlay__exit" onclick="hideMenu()"></div>
       <div class="mobile-menu-popup stack">
-        <h1>Menu</h1>
+        <h2 class="h2--big">Menu</h2>
         <a class="link link--inverse">Home</a>
         <a class="link link--inverse">Catalogue</a>
         <a class="link link--inverse">Gallery</a>
         <a class="link link--inverse">About Us</a>
-        <img class="overlay__close" src="images/icons/close.svg">
+        <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideMenu()">
       </div>
 
     </div>
