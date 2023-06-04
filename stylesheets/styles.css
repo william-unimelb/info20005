@@ -448,6 +448,7 @@ footer .link {
   color: var(--color-background);
   border-radius: var(--border-radius);
   position: relative;
+  max-width: 90%;
 }
 
 .product-page__image {
@@ -472,14 +473,14 @@ footer .link {
 }
 
 .product-page__quantity-form__container {
-  gap: var(--spacing-m);
+  gap: var(--spacing-xs);
   width: 100%;
 }
 
 .product-page__quantity-form__input {
   flex-grow: 1;
   flex-basis: 0;
-  min-width: 100px;
+  min-width: 60px;
   border-radius: var(--border-radius);
   text-align: center;
 }
