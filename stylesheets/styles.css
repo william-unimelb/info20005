@@ -30,10 +30,6 @@ h2 {
 h3 {
   font-size: var(--textsize-h3);
 }
-img {
-  /* Placeholder width to make semantic structure more visible */
-  width: 400px;
-}
 
 .p--inverse {
   color: var(--color-background);
@@ -114,6 +110,7 @@ img {
   font-size: var(--textsize-link);
   font-family: "Poppins", "Roboto", Helvetica, Arial, sans-serif;
   color: var(--color-interactive);
+  text-decoration: none;
 }
 
 .link:hover {
@@ -152,6 +149,7 @@ img {
   color: var(--color-text);
   border: none;
   text-align: center;
+  text-decoration: none;
 }
 
 .button--narrow {
@@ -252,10 +250,13 @@ header {
   left: 0;
 }
 
-header > .logo-image {
+header .logo-image {
   height: 50%;
-  width: auto;
   margin-right: auto;
+}
+
+header .logo-image > img {
+  height: 100%;
 }
 
 header > ul {
@@ -608,6 +609,7 @@ footer .link {
 
   .header__logo {
     /* Always centre the header logo */
+    width: 100px;
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
