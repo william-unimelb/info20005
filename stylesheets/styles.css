@@ -160,6 +160,18 @@ img {
   gap: var(--spacing-l);
 }
 
+/* Overlay */
+.overlay {
+  position: fixed;
+  background-color: var(--color-overlay-mask);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* Header */
 
 header {
@@ -358,3 +370,5 @@ footer .link {
   background: none;
   padding: 0 var(--spacing-s);
 }
+
+/* Product page */

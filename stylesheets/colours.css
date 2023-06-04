@@ -6,4 +6,5 @@
     --color-accent-highlight: #ffe66c;
     --color-background: white;
     --color-text: black;
+    --color-overlay-mask: rgba(0, 0, 0, 0.5);
 }
