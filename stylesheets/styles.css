@@ -182,6 +182,17 @@ img {
   justify-content: center;
 }
 
+.overlay--left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.overlay--hidden {
+  display: none;
+}
+
 /* Header */
 
 header {
@@ -434,3 +445,5 @@ footer .link {
   width: 72px;
   height: 72px;
 }
+
+/* Cart */
