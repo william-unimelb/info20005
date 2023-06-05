@@ -200,7 +200,7 @@
               <td><h3 class="cart__table__price">$12.00</h3></td>
             </tr>
           </table>
-          <a class="button">Proceed to Checkout</a>
+          <a class="button" href="/checkout-1">Proceed to Checkout</a>
         </div>
         <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideCart()">
       </div>
@@ -210,11 +210,11 @@
       <div class="overlay__exit" onclick="hideSearch()"></div>
       <div class="search-popup stack">
         <h2 class="h2--big">Search</h2>
-        <form class="search-bar">
-          <input class="search-bar__input" type="search" placeholder="Enter your search query here">
-          <input class="button" type="submit" value="Search">
+        <form class="search-bar" method="get" action="/search">
+          <input class="search-bar__input" type="search" name="search" placeholder="Enter your search query here" required>
+          <input class="button clickable" type="submit" value="Search">
         </form>
-        <a class="link link--accent search-popup__link">Advanced Search</a>
+        <a class="link link--accent search-popup__link" href="/search">Advanced Search</a>
         <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideSearch()">
       </div>
     </div>
@@ -223,8 +223,8 @@
       <div class="overlay__exit" onclick="hideMenu()"></div>
       <div class="mobile-menu-popup stack">
         <h2 class="h2--big">Menu</h2>
-        <a class="link link--inverse">Home</a>
-        <a class="link link--inverse">Catalogue</a>
+        <a class="link link--inverse" href="/">Home</a>
+        <a class="link link--inverse" href="/catalogue.html">Catalogue</a>
         <a class="link link--inverse">Gallery</a>
         <a class="link link--inverse">About Us</a>
         <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideMenu()">
@@ -250,14 +250,14 @@
       </div>
       <div class="stack">
         <h2>Information</h2>
-        <a class="link">Contact Us</a>
-        <a class="link ">About Us</a>
-        <a class="link">Location</a>
-        <a class="link">Booking</a>
+        <a class="link" href="/">Contact Us</a>
+        <a class="link" href="/">About Us</a>
+        <a class="link" href="/">Location</a>
+        <a class="link" href="/">Booking</a>
       </div>
       <div class="stack">
         <h2>More</h2>
-        <a class="link">Other information</a>
+        <a class="link" href="/">Other information</a>
       </div>
     </footer>
   </body>
