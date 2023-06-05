@@ -128,6 +128,9 @@ function cvalidateForm(){
         alert("Please enter a all fields to continue");
         location.reload();
     }
+
+    // If form is valid, advance to next page
+    window.location = "/checkout-3";
 };
 
 if(localStorage.getItem('fullname')){
