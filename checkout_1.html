@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  
  <!-- Meta tags for character set, compatibility, and viewport -->
 <head>
   <meta charset="UTF-8" />
@@ -8,31 +7,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="stylesheets/reset.css" />
   <link rel="stylesheet" href="stylesheets/styles.css" />
+  
   <title>Order1</title>
 </head>
   
 <!-- Delivery Details -->
 <body>
   <header>
-    <img src="images/Logo.svg" class="logo-image header__logo" />
-    <ul>
-      <li><a class="link link--inverse">Catalogue</a></li>
-      <li><a class="link link--inverse">Gallery</a></li>
-      <li><a class="link link--inverse">About Us</a></li>
-    </ul>
-    <ul>
-      <li>
-        <a href="/"><img class="icon" src="images/icons/search.svg" alt="search"></a>
-      </li>
-      <li>
-        <a href="/" class="cart-count"><img class="icon" src="images/icons/cart.svg" alt="shopping cart" />
+    <div class="nav">
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      <input type="checkbox" id="nav-check">
+      <div class="nav-header">
+        <img src="images/Logo.svg" class="logo-image header__logo" />
+      </div>
+      <div class="nav-links2">
+        <a href="/" class="nav-icons"><img class="icon" src="images/icons/search.svg" alt="search"></a>
+        <a href="/" class="cart-count nav-icons"><img class="icon" src="images/icons/cart.svg" alt="shopping cart" />
           <span class="oder-count">1</span>
-      </li>
-      <li>
-        <a href="/"><img class="icon" src="images/icons/login.svg" alt="login"></a>
-      </li>
-    </ul>
+      </div>
+      <div class="nav-links">
+        <a class="link link--inverse">Catalogue</a>
+        <a class="link link--inverse">Gallery</a>
+        <a class="link link--inverse">About Us</a>
+        <a href="/" class="nav-icons"><img class="icon" src="images/icons/search.svg" alt="search"></a>
+        <a href="/" class="cart-count nav-icons"><img class="icon" src="images/icons/cart.svg" alt="shopping cart" />
+          <span class="oder-count">1</span>
+          <a href="/" class="nav-icons"><img class="icon" src="images/icons/login.svg" alt="login"></a>
+      </div>
+    </div>
   </header>
+
   <div class="page-content page-content--home">
     <div class="checkout-container">
       <h1 class="text-center">Check Out</h1>
@@ -46,62 +56,78 @@
             <a class="">x1</a>
           </div>
           <div class="stack stack--centred stack--row">
-            <a class="">$20.00</a>
+            <a class="price">$20.00</a>
           </div>
         </div>
       </div>
       <h2>Delivery Details</h2>
-
-      <form action="/">
+      <form action="#" id="orderForm" onsubmit="return validateForm()">
         <div class="">
           <div class="cluster field-container">
             <div class="input-con">
               <label for="fname">First Name*</label>
-              <input type="text" class="input-field" placeholder="John">
+              <input type="text" class="input-field" id="fname" placeholder="John">
             </div>
             <div class="input-con">
               <label for="lname">Last Name*</label>
-              <input type="text" class="input-field" placeholder="Doe">
+              <input type="text" class="input-field" id="lname" placeholder="Doe">
             </div>
 
           </div>
           <div>
             <label for="email">Email*</label>
-            <input type="text" class="input-field" placeholder="example@example.com">
+            <input type="text" class="input-field" id="email" placeholder="example@example.com">
           </div>
           <div>
             <label for="pbone">Phone Number*</label>
-            <input type="text" class="input-field" placeholder="(+xxx) 0000 0000">
+            <input type="text" class="input-field" id="phone" placeholder="(+xxx) 0000 0000">
           </div>
           <div>
             <label for="add1">Address Line 1*</label>
-            <input type="text" class="input-field">
+            <input type="text" class="input-field" id="add1">
           </div>
-          <div>
+          <div class="xs-none">
             <label for="add2">Address Line 2*</label>
-            <input type="text" class="input-field">
+            <input type="text" class="input-field" id="add2">
           </div>
-          <div class="cluster">
+          <div class="cluster xs-none">
             <div class="input-con">
               <label for="city">City*</label>
-              <input type="text" class="input-field">
+              <input type="text" class="input-field" id="city">
             </div>
-            <div class="input-con">
+            <div class="input-con xs-none">
               <label for="state">State*</label>
-              <input type="text" class="input-field">
+              <input type="text" class="input-field" id="state">
             </div>
 
           </div>
-          <div class="cluster">
+          <div class="cluster xs-none">
             <div class="input-con">
               <label for="country">Country</label>
-              <input type="text" class="input-field">
+              <input type="text" class="input-field" id="country">
             </div>
-            <div>
+            <div class="input-con">
               <label for="post">Postcode*</label>
-              <input type="text" class="input-field">
+              <input type="text" class="input-field" id="postcode">
             </div>
-
+          </div>
+          <div class="xs-show">
+            <h2>Choose Payment</h2>
+            <div class="space-div">
+              <label class="check-container">After Pay
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+              </label>
+              <label class="check-container">Credit Card
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="check-container">Google Pay
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            
           </div>
         </div>
         <div class="submit-btn">
@@ -111,9 +137,10 @@
       </form>
     </div>
   </div>
+
   <footer class="footer">
     <div class="stack">
-      <img src="images/Logo.svg" />
+      <img class="footer-logo" src="images/Logo.svg" />
       <ul class="stack stack--row footer__icon-bar">
         <li><a href="/"><img class="icon" src="images/icons/facebook.svg" alt="facebook"></a></li>
         <li><a href="/"><img class="icon" src="images/icons/instagram.svg" alt="instagram"></a></li>
@@ -140,6 +167,7 @@
       <a class="link">Other information</a>
     </div>
   </footer>
+  <script src="scripts/js.js"></script>
 </body>
 
 </html>
