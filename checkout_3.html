@@ -5,33 +5,42 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="stylesheets/reset.css" />
   <link rel="stylesheet" href="stylesheets/styles.css" />
   <title>Order3</title>
 </head>
-
+  
 <!-- Order Confirmation -->
 <body>
   <header>
-    <img src="images/Logo.svg" class="logo-image header__logo" />
-    <ul>
-      <li><a class="link link--inverse">Catalogue</a></li>
-      <li><a class="link link--inverse">Gallery</a></li>
-      <li><a class="link link--inverse">About Us</a></li>
-    </ul>
-    <ul>
-      <li>
-        <a href="/"><img class="icon" src="images/icons/search.svg" alt="search"></a>
-      </li>
-      <li>
-        <a href="/" class="cart-count"><img class="icon" src="images/icons/cart.svg" alt="shopping cart" />
+    <div class="nav">
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      <input type="checkbox" id="nav-check">
+      <div class="nav-header">
+        <img src="images/Logo.svg" class="logo-image header__logo" />
+      </div>
+      <div class="nav-links2">
+        <a href="/" class="nav-icons"><img class="icon" src="images/icons/search.svg" alt="search"></a>
+        <a href="/" class="cart-count nav-icons"><img class="icon" src="images/icons/cart.svg" alt="shopping cart" />
           <span class="oder-count">1</span>
-        </a>
-      </li>
-      <li>
-        <a href="/"><img class="icon" src="images/icons/login.svg" alt="login"></a>
-      </li>
-    </ul>
+      </div>
+      <div class="nav-links">
+        <a class="link link--inverse">Catalogue</a>
+        <a class="link link--inverse">Gallery</a>
+        <a class="link link--inverse">About Us</a>
+        <a href="/" class="nav-icons"><img class="icon" src="images/icons/search.svg" alt="search"></a>
+        <a href="/" class="cart-count nav-icons"><img class="icon" src="images/icons/cart.svg" alt="shopping cart" />
+          <span class="oder-count">1</span>
+          <a href="/" class="nav-icons"><img class="icon" src="images/icons/login.svg" alt="login"></a>
+      </div>
+    </div>
   </header>
   <div class="page-content page-content--home">
     <div class="checkout-container">
@@ -46,7 +55,7 @@
             <a class="">x1</a>
           </div>
           <div class="stack stack--centred stack--row">
-            <a class="">$20.00</a>
+            <a class="xs-none">$20.00</a>
           </div>
         </div>
       </div>
@@ -73,46 +82,46 @@
           <h2>Delivery</h2>
           <div>
             <p class="detail-item-l">Name:</p>
-            <p class="detail-item-r">john Doe</p>
+            <p class="detail-item-r" id="fullname">john Doe</p>
           </div>
           <div>
             <p class="detail-item-l">Email:</p>
-            <p class="detail-item-r">John@doe.com</p>
+            <p class="detail-item-r" id="email">John@doe.com</p>
           </div>
           <div>
             <p class="detail-item-l">Phone Number:</p>
-            <p class="detail-item-r">0000 0000</p>
+            <p class="detail-item-r" id="phone">0000 0000</p>
           </div>
           <div>
             <p class="detail-item-l">Address Line 1:</p>
-            <p class="detail-item-r">Unit 2</p>
+            <p class="detail-item-r" id="add1">Unit 2</p>
           </div>
           <div>
             <p class="detail-item-l">Address Line 2:</p>
-            <p class="detail-item-r">3 john St</p>
+            <p class="detail-item-r" id="add2">3 john St</p>
           </div>
           <div>
             <p class="detail-item-l">City:</p>
-            <p class="detail-item-r">johantown</p>
+            <p class="detail-item-r" id="city">johantown</p>
           </div>
           <div>
             <p class="detail-item-l">State:</p>
-            <p class="detail-item-r">Johnsland</p>
+            <p class="detail-item-r" id="state">Johnsland</p>
           </div>
           <div>
             <p class="detail-item-l">Postcode:</p>
-            <p class="detail-item-r">0000</p>
+            <p class="detail-item-r" id="postcode">0000</p>
           </div>
         </div>
         <div class="payment-details">
           <h2>Payment Method</h2>
           <div>
             <p class="detail-item-l">Card Number:</p>
-            <p class="detail-item-r">xxxx-xxxx-xxxx-2520</p>
+            <p class="detail-item-r" id="cardNumber">xxxx-xxxx-xxxx-2520</p>
           </div>
           <div>
             <p class="detail-item-l">Cardholder Name:</p>
-            <p class="detail-item-r">john Doe</p>
+            <p class="detail-item-r" id="cardHolder">john Doe</p>
           </div>
         </div>
         <div class="submit-btn">
@@ -122,9 +131,10 @@
       </div>
     </div>
   </div>
+
   <footer class="footer">
     <div class="stack">
-      <img src="images/Logo.svg" />
+      <img class="footer-logo" src="images/Logo.svg" />
       <ul class="stack stack--row footer__icon-bar">
         <li><a href="/"><img class="icon" src="images/icons/facebook.svg" alt="facebook"></a></li>
         <li><a href="/"><img class="icon" src="images/icons/instagram.svg" alt="instagram"></a></li>
@@ -151,6 +161,7 @@
       <a class="link">Other information</a>
     </div>
   </footer>
+  <script src="scripts/js.js"></script>
 </body>
 
 </html>
