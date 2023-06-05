@@ -1065,21 +1065,6 @@ label.check-container {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 
-  .footer {
-    display: block;
-    padding: 20px;
-  }
-
-  .footer .stack {
-    display: block;
-    text-align: center;
-  }
-
-  .footer-logo {
-    display: inline-block;
-    width: 200px;
-    max-width: 200px;
-  }
 
   ul.stack.stack--row.footer__icon-bar {
     margin: 0;
@@ -1088,9 +1073,6 @@ label.check-container {
   ul.stack.stack--row.footer__icon-bar li {
     display: inline-block;
     margin: 5px;
-  }
-  .page-content{
-    margin: 100px 0 0 0;
   }
   .checkout-container{
     width: 90%;
