@@ -799,3 +799,20 @@ label{
 .button--reverse:hover{
   background-color: #fff;
 }
+/* Order 3 */
+.order-details-container,
+.delivery-details,
+.payment-details{
+  margin: var(--spacing-s) 0;
+}
+.detail-item-l,
+.detail-item-r{
+  display: inline-block;
+}
+.detail-item-r{
+  float: right;
+  text-align: right;
+}
+.text-bold{
+  font-weight: 800;
+}
