@@ -33,6 +33,7 @@ h3 {
 
 .p--inverse {
   color: var(--color-background);
+  
 }
 
 .h2--big {
@@ -862,3 +863,13 @@ width: 49%;
 .item-fl{
   float: right;
 }
+@media all and (max-width: 750px) {
+  /* CSS rules here for screens lower than 750px */
+  .checkout-container {
+    width: 100%;
+    margin: auto;
+}
+  }
+  @media all and (min-width: 750px) {
+  /* CSS rules here for screens above 750px */
+  }
