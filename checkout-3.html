@@ -8,39 +8,35 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="stylesheets/reset.css" />
   <link rel="stylesheet" href="stylesheets/styles.css" />
+  <script src="scripts/formValidationAndLocalStorage.js"></script>
+  <script src="scripts/popups.js"></script>
+  <script src="scripts/cart.js"></script>
+  <script src="scripts/quantity.js"></script>
   <title>Order3</title>
 </head>
   
 <!-- Order Confirmation -->
 <body>
   <header>
-    <div class="nav">
-      <div class="nav-btn">
-        <label for="nav-check">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-      </div>
-      <input type="checkbox" id="nav-check">
-      <div class="nav-header">
-        <img src="images/Logo.svg" class="logo-image header__logo" />
-      </div>
-      <div class="nav-links2">
-        <a href="/" class="nav-icons"><img class="icon" src="images/icons/search.svg" alt="search"></a>
-        <a href="/" class="cart-count nav-icons"><img class="icon" src="images/icons/cart.svg" alt="shopping cart" />
-          <span class="oder-count">1</span>
-      </div>
-      <div class="nav-links">
-        <a class="link link--inverse">Catalogue</a>
-        <a class="link link--inverse">Gallery</a>
-        <a class="link link--inverse">About Us</a>
-        <a href="/" class="nav-icons"><img class="icon" src="images/icons/search.svg" alt="search"></a>
-        <a href="/" class="cart-count nav-icons"><img class="icon" src="images/icons/cart.svg" alt="shopping cart" />
-          <span class="oder-count">1</span>
-          <a href="/" class="nav-icons"><img class="icon" src="images/icons/login.svg" alt="login"></a>
-      </div>
-    </div>
+    <img class="hamburger-menu icon hide--desktop clickable" src="images/icons/hamburger-menu.svg" alt="menu" onclick="showMenu()">
+    <a href="/" class="logo-image header__logo"><img src="images/Logo.svg" class="header__logo"/></a>
+    <ul class="hide--mobile">
+      <li><a class="link link--inverse" href="/catalogue">Catalogue</a></li>
+      <li><a class="link link--inverse" href="/">Gallery</a></li>
+      <li><a class="link link--inverse" href="/">About Us</a></li>
+    </ul>
+    <ul>
+      <li>
+        <a class="clickable" onclick="showSearch()"><img class="icon" src="images/icons/search.svg" alt="search"></a>
+      </li>
+      <li class="header__cart-container">
+        <a class="clickable" onclick="showCart()"><img class="icon" src="images/icons/cart.svg" alt="shopping cart"></a>
+        <p class="header__cart-container__notification" id="cart-notification">1</p>
+      </li>
+      <li class="hide--mobile">
+        <a href="/"><img class="icon" src="images/icons/login.svg" alt="login"></a>
+      </li>
+    </ul>
   </header>
   <div class="page-content page-content--home">
     <div class="checkout-container">
@@ -125,43 +121,124 @@
           </div>
         </div>
         <div class="submit-btn">
-          <input class="button button--reverse" type="submit" value="Edit Order">
-          <input class="button button--inverse bnt1" type="submit" value="Confirm">
+          <input class="button button--reverse clickable" type="submit" value="Edit Order" onclick="window.location='/checkout-2'">
+          <input class="button button--inverse bnt1 clickable" type="submit" value="Confirm" onclick="window.location='/checkout-4'">
         </div>
       </div>
     </div>
   </div>
 
-  <footer class="footer">
-    <div class="stack">
-      <img class="footer-logo" src="images/Logo.svg" />
-      <ul class="stack stack--row footer__icon-bar">
-        <li><a href="/"><img class="icon" src="images/icons/facebook.svg" alt="facebook"></a></li>
-        <li><a href="/"><img class="icon" src="images/icons/instagram.svg" alt="instagram"></a></li>
-        <li><a href="/"><img class="icon" src="images/icons/whatsapp.svg" alt="whatsapp"></a></li>
-        <li><a href="/"><img class="icon" src="images/icons/youtube.svg" alt="youtube"></a></li>
-      </ul>
+  <!-- Overlays -->
+    <!-- Overlay for cart -->
+    <div class="overlay overlay--right overlay--hidden" id="cart-overlay">
+      <div class="overlay__exit" onclick="hideCart()"></div>
+      <div class="cart stack">
+        <h2 class="h2--big">Cart</h2>
+        <p id="cart-empty" class="hide">Your cart is empty!</p>
+        <div class="stack cart__container" id="cart-container">
+          <div class="stack stack--row stack--centred cart__item stack">
+            <img class="cart__item__element cart__item__img" src="images/pexels-lisa-fotios-1351238.jpg">
+            <div class="cart__item__element stack stack--distribute">
+              <h2>Food Name</h2>
+              <form class="stack stack--row stack--centred">
+                <img src="images/icons/subtract.svg" class="icon clickable" onclick="adjustQuantity('cart-quantity', -1, clearCart)">
+                <input class="cart__item__input" type="number" min="1" value="1" required id="cart-quantity">
+                <img src="images/icons/add.svg" class="icon clickable" onclick="adjustQuantity('cart-quantity', 1)">
+              </form>
+              <p>$12.00 ($12.00ea)</p>
+            </div>
+            <img src="images/icons/delete.svg" class="icon clickable" onclick="clearCart(); resetInput('cart-quantity');">
+          </div>
+          <span class="cart__space"></span>
+          <div class="stack stack--centred stack--row options-bar cart__navigation">
+            <div class="stack stack--centred stack--row stack--full-width clickable">
+              <img class="icon" src="images/icons/left_accent.svg" />
+              <a class="link link--accent">Prev</a>
+            </div>
+            <p>Page 1 of 1</p>
+            <div class="stack stack--centred stack--row clickable">
+              <a class="link link--accent">Next</a>
+              <img class="icon clickable" src="images/icons/right_accent.svg" />
+            </div>
+          </div>
+          <table>
+            <tr>
+              <td><p>Subtotal</p></td>
+              <td><p class="cart__table__price">$12.00</p></td>
+            </tr>
+            <tr>
+              <td><p>GST Included</p></td>
+              <td><p class="cart__table__price">$1.02</p></td>
+            </tr>
+            <tr>
+              <td><p>Delivery</p></td>
+              <td><p class="cart__table__price">$0.00</p></td>
+            </tr>
+            <tr>
+              <td><h3>Total</h3></td>
+              <td><h3 class="cart__table__price">$12.00</h3></td>
+            </tr>
+          </table>
+          <a class="button" href="/checkout-1">Proceed to Checkout</a>
+        </div>
+        <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideCart()">
+      </div>
     </div>
-    <div class="stack">
-      <h2>Contact</h2>
-      <p>RMIT University - 124 La Trobe Street,</p>
-      <p>Melbourne VIC 3000.</p>
-      <p>info@pearsonmurphy.com.au</p>
-      <p>03 9639 2777</p>
+    <!-- Overlay for search -->
+    <div class="overlay overlay--top overlay--hidden" id="search-overlay">
+      <div class="overlay__exit" onclick="hideSearch()"></div>
+      <div class="search-popup stack">
+        <h2 class="h2--big">Search</h2>
+        <form class="search-bar" method="get" action="/search">
+          <input class="search-bar__input" type="search" name="search" placeholder="Enter your search query here" required>
+          <input class="button clickable" type="submit" value="Search">
+        </form>
+        <a class="link link--accent search-popup__link" href="/search">Advanced Search</a>
+        <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideSearch()">
+      </div>
     </div>
-    <div class="stack">
-      <h2>Information</h2>
-      <a class="link">Contact Us</a>
-      <a class="link ">About Us</a>
-      <a class="link">Location</a>
-      <a class="link">Booking</a>
+    <!-- Overlay for mobile menu -->
+    <div class="overlay overlay--left overlay--hidden" id="menu-overlay">
+      <div class="overlay__exit" onclick="hideMenu()"></div>
+      <div class="mobile-menu-popup stack">
+        <h2 class="h2--big">Menu</h2>
+        <a class="link link--inverse" href="/">Home</a>
+        <a class="link link--inverse" href="/catalogue.html">Catalogue</a>
+        <a class="link link--inverse" href="/">Gallery</a>
+        <a class="link link--inverse" href="/">About Us</a>
+        <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideMenu()">
+      </div>
+
     </div>
-    <div class="stack">
-      <h2>More</h2>
-      <a class="link">Other information</a>
-    </div>
-  </footer>
-  <script src="scripts/js.js"></script>
+    <footer class="footer">
+      <div class="stack footer__logo">
+        <img src="images/Logo.svg" />
+        <ul class="stack stack--row footer__icon-bar">
+          <li><a href="/"><img class="icon" src="images/icons/facebook.svg" alt="facebook" ></a></li>
+          <li><a href="/"><img class="icon" src="images/icons/instagram.svg" alt="instagram" ></a></li>
+          <li><a href="/"><img class="icon" src="images/icons/whatsapp.svg" alt="whatsapp" ></a></li>
+          <li><a href="/"><img class="icon" src="images/icons/youtube.svg" alt="youtube" ></a></li>
+        </ul>
+      </div>
+      <div class="stack">
+        <h2>Contact</h2>
+        <p>RMIT University - 124 La Trobe Street,</p>
+        <p>Melbourne VIC 3000.</p>
+        <p>info@pearsonmurphy.com.au</p>
+        <p>03 9639 2777</p>
+      </div>
+      <div class="stack">
+        <h2>Information</h2>
+        <a class="link" href="/">Contact Us</a>
+        <a class="link" href="/">About Us</a>
+        <a class="link" href="/">Location</a>
+        <a class="link" href="/">Booking</a>
+      </div>
+      <div class="stack">
+        <h2>More</h2>
+        <a class="link" href="/">Other information</a>
+      </div>
+    </footer>
 </body>
 
 </html>
