@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheets/reset.css" />
     <link rel="stylesheet" href="stylesheets/styles.css" />
+    <script src="scripts/popups.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/quantity.js"></script>
     <title>Pearson & Murphy's</title>
   </head>
   <body>
     <header>
-      <img class="hamburger-menu icon hide--desktop" src="images/icons/hamburger-menu.svg" alt="menu">
+      <img class="hamburger-menu icon hide--desktop clickable" src="images/icons/hamburger-menu.svg" alt="menu" onclick="showMenu()">
       <a href="/" class="logo-image header__logo"><img src="images/Logo.svg" class="header__logo"/></a>
       <ul class="hide--mobile">
         <li><a class="link link--inverse" href="/catalogue">Catalogue</a></li>
@@ -19,10 +22,11 @@
       </ul>
       <ul>
         <li>
-          <a href="/"><img class="icon" src="images/icons/search.svg" alt="search"></a>
+          <a class="clickable" onclick="showSearch()"><img class="icon" src="images/icons/search.svg" alt="search"></a>
         </li>
-        <li>
-          <a href="/"><img class="icon" src="images/icons/cart.svg" alt="shopping cart"></a>
+        <li class="header__cart-container">
+          <a class="clickable" onclick="showCart()"><img class="icon" src="images/icons/cart.svg" alt="shopping cart"></a>
+          <p class="header__cart-container__notification hide" id="cart-notification">1</p>
         </li>
         <li class="hide--mobile">
           <a href="/"><img class="icon" src="images/icons/login.svg" alt="login"></a>
@@ -64,18 +68,18 @@
       <section class="background-banner stack">
         <h2 class="p--inverse h2--big">Featured Products</h2>
         <div class="featured-products">
-          <div class="stack featured-products__card clickable">
+          <div class="stack featured-products__card clickable" onclick="showProduct()">
             <img class="featured-products__card__image" src="images/pexels-lisa-fotios-1351238.jpg" />
             <h2>Name</h2>
             <p>Food information</p>
           </div>
-          <div class="stack featured-products__card clickable">
-            <img class="featured-products__card__image" src="images/pexels-lisa-fotios-1351238.jpg" />
+          <div class="stack featured-products__card clickable" onclick="showProduct()">
+            <img class="featured-products__card__image" src="images/pexels-rajesh-tp-1633572.jpg" />
             <h2>Name</h2>
             <p>Food information</p>
           </div>
-          <div class="stack featured-products__card clickable">
-            <img class="featured-products__card__image" src="images/pexels-lisa-fotios-1351238.jpg" />
+          <div class="stack featured-products__card clickable" onclick="showProduct()">
+            <img class="featured-products__card__image" src="images/pexels-andra-918581.jpg" />
             <h2>Name</h2>
             <p>Food information</p>
           </div>
@@ -91,9 +95,119 @@
           <h2 class="h2--big">News</h2>
           <p>News</p>
           <span class="hero__content__space"></span>
-          <a class="button hero__content__button">View</a>
+          <a class="button hero__content__button" href="/">View</a>
         </div>
       </section>
+    </div>
+
+    <!-- Overlays -->
+
+    <!-- Overlay for product -->
+    <div class="overlay overlay--center overlay--hidden" id="product-overlay" >
+      <div class="overlay__exit" onclick="hideProduct(); resetInput('product-quantity');"></div>
+      <div class="sidebar-container product-page">
+        <img class="sidebar-container__sidebar product-page__image" src="images/pexels-lisa-fotios-1351238.jpg">
+        <div class="sidebar-container__not-sidebar product-page__description stack stack--full-width">
+          <div class="stack stack--full-width">
+            <h2 class="h2--big">Green Toast</h2>
+            <p class="product-page__price-tag">$12.00</p>
+            <p>This toast is made with your choice of freshly baked bread, whether it's our signature sourdough and smooth ripe avacados.</p>
+            <p>Vegetarian</p>
+          </div>
+          <form class="stack stack--full-width product-page__quantity-form" onsubmit="return false">
+            <h2>Quantity</h2>
+            <div class="stack stack--row product-page__quantity-form__container">
+              <a class="button button--narrow clickable" onclick="adjustQuantity('product-quantity', -10)">-10</a>
+              <a class="button button--narrow clickable" onclick="adjustQuantity('product-quantity', -1)">-1</a>
+              <input class="product-page__quantity-form__input" type="number" min="1" value="1" required id="product-quantity">
+              <a class="button button--narrow clickable" onclick="adjustQuantity('product-quantity', 1)">+1</a>
+              <a class="button button--narrow clickable" onclick="adjustQuantity('product-quantity', 10)">+10</a>
+            </div>
+            <input class="button clickable" type="submit" value="Add to Cart" onclick="addToCart(); hideProduct(); resetInput('product-quantity');">
+          </form>
+        </div>
+        <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideProduct(); resetInput('product-quantity');">
+      </div>
+    </div>
+    <!-- Overlay for cart -->
+    <div class="overlay overlay--right overlay--hidden" id="cart-overlay">
+      <div class="overlay__exit" onclick="hideCart()"></div>
+      <div class="cart stack">
+        <h2 class="h2--big">Cart</h2>
+        <p id="cart-empty">Your cart is empty!</p>
+        <div class="stack cart__container hide" id="cart-container">
+          <div class="stack stack--row stack--centred cart__item stack">
+            <img class="cart__item__element cart__item__img" src="images/pexels-lisa-fotios-1351238.jpg">
+            <div class="cart__item__element stack stack--distribute">
+              <h2>Food Name</h2>
+              <form class="stack stack--row stack--centred">
+                <img src="images/icons/subtract.svg" class="icon clickable" onclick="adjustQuantity('cart-quantity', -1, clearCart)">
+                <input class="cart__item__input" type="number" min="1" value="1" required id="cart-quantity">
+                <img src="images/icons/add.svg" class="icon clickable" onclick="adjustQuantity('cart-quantity', 1)">
+              </form>
+              <p>$12.00 ($12.00ea)</p>
+            </div>
+            <img src="images/icons/delete.svg" class="icon clickable" onclick="clearCart(); resetInput('cart-quantity');">
+          </div>
+          <span class="cart__space"></span>
+          <div class="stack stack--centred stack--row options-bar cart__navigation">
+            <div class="stack stack--centred stack--row stack--full-width clickable">
+              <img class="icon" src="images/icons/left_accent.svg" />
+              <a class="link link--accent">Prev</a>
+            </div>
+            <p>Page 1 of 1</p>
+            <div class="stack stack--centred stack--row clickable">
+              <a class="link link--accent">Next</a>
+              <img class="icon clickable" src="images/icons/right_accent.svg" />
+            </div>
+          </div>
+          <table>
+            <tr>
+              <td><p>Subtotal</p></td>
+              <td><p class="cart__table__price">$12.00</p></td>
+            </tr>
+            <tr>
+              <td><p>GST Included</p></td>
+              <td><p class="cart__table__price">$1.02</p></td>
+            </tr>
+            <tr>
+              <td><p>Delivery</p></td>
+              <td><p class="cart__table__price">$0.00</p></td>
+            </tr>
+            <tr>
+              <td><h3>Total</h3></td>
+              <td><h3 class="cart__table__price">$12.00</h3></td>
+            </tr>
+          </table>
+          <a class="button" href="/checkout-1">Proceed to Checkout</a>
+        </div>
+        <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideCart()">
+      </div>
+    </div>
+    <!-- Overlay for search -->
+    <div class="overlay overlay--top overlay--hidden" id="search-overlay">
+      <div class="overlay__exit" onclick="hideSearch()"></div>
+      <div class="search-popup stack">
+        <h2 class="h2--big">Search</h2>
+        <form class="search-bar" method="get" action="/search">
+          <input class="search-bar__input" type="search" name="search" placeholder="Enter your search query here" required>
+          <input class="button clickable" type="submit" value="Search">
+        </form>
+        <a class="link link--accent search-popup__link" href="/search">Advanced Search</a>
+        <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideSearch()">
+      </div>
+    </div>
+    <!-- Overlay for mobile menu -->
+    <div class="overlay overlay--left overlay--hidden" id="menu-overlay">
+      <div class="overlay__exit" onclick="hideMenu()"></div>
+      <div class="mobile-menu-popup stack">
+        <h2 class="h2--big">Menu</h2>
+        <a class="link link--inverse" href="/">Home</a>
+        <a class="link link--inverse" href="/catalogue.html">Catalogue</a>
+        <a class="link link--inverse" href="/">Gallery</a>
+        <a class="link link--inverse" href="/">About Us</a>
+        <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideMenu()">
+      </div>
     </div>
     <footer class="footer">
       <div class="stack footer__logo">
