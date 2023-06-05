@@ -10,31 +10,39 @@
   <link rel="stylesheet" href="stylesheets/styles.css" />
   <title>Order4</title>
 </head>
-<!-- Thank You Card -->
+
 <body>
   <header>
-    <img src="images/Logo.svg" class="logo-image header__logo" />
-    <ul>
-      <li><a class="link link--inverse">Catalogue</a></li>
-      <li><a class="link link--inverse">Gallery</a></li>
-      <li><a class="link link--inverse">About Us</a></li>
-    </ul>
-    <ul>
-      <li>
-        <a href="/"><img class="icon" src="images/icons/search.svg" alt="search"></a>
-      </li>
-      <li>
-        <a href="/" class="cart-count"><img class="icon" src="images/icons/cart.svg" alt="shopping cart" />
+    <div class="nav">
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      <input type="checkbox" id="nav-check">
+      <div class="nav-header">
+        <img src="images/Logo.svg" class="logo-image header__logo" />
+      </div>
+      <div class="nav-links2">
+        <a href="/" class="nav-icons"><img class="icon" src="images/icons/search.svg" alt="search"></a>
+        <a href="/" class="cart-count nav-icons"><img class="icon" src="images/icons/cart.svg" alt="shopping cart" />
           <span class="oder-count">1</span>
-        </a>
-      </li>
-      <li>
-        <a href="/"><img class="icon" src="images/icons/login.svg" alt="login"></a>
-      </li>
-    </ul>
+      </div>
+      <div class="nav-links">
+        <a class="link link--inverse">Catalogue</a>
+        <a class="link link--inverse">Gallery</a>
+        <a class="link link--inverse">About Us</a>
+        <a href="/" class="nav-icons"><img class="icon" src="images/icons/search.svg" alt="search"></a>
+        <a href="/" class="cart-count nav-icons"><img class="icon" src="images/icons/cart.svg" alt="shopping cart" />
+          <span class="oder-count">1</span>
+          <a href="/" class="nav-icons"><img class="icon" src="images/icons/login.svg" alt="login"></a>
+      </div>
+    </div>
   </header>
   <div class="page-content page-content--home">
-    <div class="checkout-container">
+    <div class="checkout-container xs-thank-bg">
       <h1 class="text-center">Thank You!</h1>
       <p>Thank you for choosing our catering service and placing your order through our website. we hope you enjoy your
         meal!</p>
@@ -42,10 +50,10 @@
         <p>Your Order Number: #10882</p>
         <p>Your Receipt: </p>
       </div>
-      <div class="space-div">
-        <p class="text-green text-bold">Print Receipt <i class="fa fa-download"></i></p>
+      <div class="">
+        <p class="text-green text-bold"><span class="xs-none">Print Receipt</span> <i class="fa fa-download"></i></p>
       </div>
-      <div class="space-div">
+      <div class="">
         <div class="green-container">
           <div class="order-details">
             <p class="detail-item-l text-bold">Order#123456789</p>
@@ -97,10 +105,9 @@
 
     </div>
   </div>
-  <!-- Footer -->
   <footer class="footer">
     <div class="stack">
-      <img src="images/Logo.svg" />
+      <img class="footer-logo" src="images/Logo.svg" />
       <ul class="stack stack--row footer__icon-bar">
         <li><a href="/"><img class="icon" src="images/icons/facebook.svg" alt="facebook"></a></li>
         <li><a href="/"><img class="icon" src="images/icons/instagram.svg" alt="instagram"></a></li>
@@ -127,6 +134,7 @@
       <a class="link">Other information</a>
     </div>
   </footer>
+
 </body>
 
 </html>
