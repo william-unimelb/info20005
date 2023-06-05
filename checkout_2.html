@@ -8,76 +8,86 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="stylesheets/reset.css" />
   <link rel="stylesheet" href="stylesheets/styles.css" />
+  
   <title>Order2</title>
 </head>
-  
-/!-- Main Content -->
+
 <body>
   <header>
-    <img src="images/Logo.svg" class="logo-image header__logo" />
-    <ul>
-      <li><a class="link link--inverse">Catalogue</a></li>
-      <li><a class="link link--inverse">Gallery</a></li>
-      <li><a class="link link--inverse">About Us</a></li>
-    </ul>
-    <ul>
-      <li>
-        <a href="/"><img class="icon" src="images/icons/search.svg" alt="search"></a>
-      </li>
-      <li>
-        <a href="/" class="cart-count"><img class="icon" src="images/icons/cart.svg" alt="shopping cart" />
+    <div class="nav">
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      <input type="checkbox" id="nav-check">
+      <div class="nav-header">
+        <img src="images/Logo.svg" class="logo-image header__logo" />
+      </div>
+      <div class="nav-links2">
+        <a href="/" class="nav-icons"><img class="icon" src="images/icons/search.svg" alt="search"></a>
+        <a href="/" class="cart-count nav-icons"><img class="icon" src="images/icons/cart.svg" alt="shopping cart" />
           <span class="oder-count">1</span>
-        </a>
-      </li>
-      <li>
-        <a href="/"><img class="icon" src="images/icons/login.svg" alt="login"></a>
-      </li>
-    </ul>
+      </div>
+      <div class="nav-links">
+        <a class="link link--inverse">Catalogue</a>
+        <a class="link link--inverse">Gallery</a>
+        <a class="link link--inverse">About Us</a>
+        <a href="/" class="nav-icons"><img class="icon" src="images/icons/search.svg" alt="search"></a>
+        <a href="/" class="cart-count nav-icons"><img class="icon" src="images/icons/cart.svg" alt="shopping cart" />
+          <span class="oder-count">1</span>
+          <a href="/" class="nav-icons"><img class="icon" src="images/icons/login.svg" alt="login"></a>
+      </div>
+    </div>
   </header>
+
   <div class="page-content page-content--home">
     <div class="checkout-container">
       <h1 class="text-center">Check Out</h1>
       <h2>Payment Information</h2>
       <div class="form-container payment-info-form">
-        <form action="/">
+        <form action="#" id="cForm" onsubmit="return cvalidateForm()">
           <div class="">
             <label for="name">Full Name</label>
-            <input type="text" class="input-field" placeholder="Name">
+            <input type="text" class="input-field" placeholder="Name" id="cardHolder">
           </div>
           <div class="input-icons">
             <label for="name">Credit Card Number</label>
             <i class=" fa fa-credit-card cicon"></i>
-            <input type="text" class="input-field" placeholder="1234 1234 1234 1234">
+            <input type="text" class="input-field" placeholder="1234 1234 1234 1234" id="cardNumber">
           </div>
           <div class="cluster">
             <div class="input-con">
               <label for="expdate">Exp Date</label>
-              <input type="text" class="input-field" placeholder="MM/YY">
+              <input type="text" class="input-field" placeholder="MM/YY" id="cardDate">
             </div>
             <div class="input-con">
               <div class="input-icons">
                 <label for="post">CVV</label>
                 <i class=" fa fa-info cicon"></i>
-                <input type="text" class="input-field" placeholder="...">
+                <input type="text" class="input-field" placeholder="..." id="cardCVV">
               </div>
             </div>
           </div>
           <div class="">
             <label for="zip">Zip Code</label>
-            <input type="text" class="input-field" placeholder="90210">
+            <input type="text" class="input-field" placeholder="90210" id="cardZip">
           </div>
           <p class="total-pay">Total to Pay: $70</p>
           <div class="submit-btn">
-            <input class="button button--reverse" type="submit" value="Prev">
+            <input class="button button--reverse" type="button" value="Prev">
             <input class="button button--inverse bnt1" type="submit" value="Next">
           </div>
         </form>
       </div>
     </div>
   </div>
+
   <footer class="footer">
     <div class="stack">
-      <img src="images/Logo.svg" />
+      <img class="footer-logo" src="images/Logo.svg" />
       <ul class="stack stack--row footer__icon-bar">
         <li><a href="/"><img class="icon" src="images/icons/facebook.svg" alt="facebook"></a></li>
         <li><a href="/"><img class="icon" src="images/icons/instagram.svg" alt="instagram"></a></li>
@@ -104,6 +114,7 @@
       <a class="link">Other information</a>
     </div>
   </footer>
+  <script src="scripts/js.js"></script>
 </body>
 
 </html>
