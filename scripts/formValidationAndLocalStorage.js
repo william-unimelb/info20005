@@ -10,6 +10,7 @@ function validateForm(){
     var state = document.forms.orderForm.state.value;
     var postcode = document.forms.orderForm.postcode.value;
     if(fname == ""){
+        console.log("Please enter a Firstname here to continue");
        alert("Please enter a Firstname here to continue");
        document.getElementById('fname').focus();
        return false;
@@ -45,8 +46,8 @@ function validateForm(){
        return false;
     }
     if(country == ""){
-       alert("Please enter a city here to continue");
-       document.getElementById('city').focus();
+       alert("Please enter a country here to continue");
+       document.getElementById('country').focus();
        return false;
     }
     if(city == ""){
@@ -80,6 +81,9 @@ function validateForm(){
         alert("Please enter a all fields to continue");
         location.reload();
     }
+
+    // If form is valid, advance to next page
+    window.location = "/checkout-2";
 };
 function cvalidateForm(){
     var cardHolder = document.forms.cForm.cardHolder.value;
