@@ -690,7 +690,7 @@ footer .link {
   }
    
 }
-/* Order 1 */
+/* Check Out 1 */
 .checkout-container{
   width: 60%;
   margin: auto;
@@ -744,7 +744,7 @@ label{
 .button--inverse.bnt1{
   border: 4px solid #17530D;
 }
-/* Order 2 */
+/* Check Out 2 */
 .payment-info-form {
   padding: 50px;
   background-color: #E5E5E5;
@@ -799,7 +799,7 @@ label{
 .button--reverse:hover{
   background-color: #fff;
 }
-/* Order 3 */
+/* Check Out 3 */
 .order-details-container,
 .delivery-details,
 .payment-details{
@@ -815,4 +815,50 @@ label{
 }
 .text-bold{
   font-weight: 800;
+}
+/* Check Out 4 */
+.space-div{
+  margin: var(--spacing-l) 0;
+}
+.text-green{
+  text-align: right;
+  color: #17530D;
+}
+.green-container{
+  padding: 10px;
+  background-color: #CEE9CA;
+}
+.green-container .order-details{
+  padding: 30px 0;
+  border-bottom: 4px solid #A5ABA4;
+  margin: 20px;
+}
+.item-details,
+.receipt-details{
+  padding: 25px;
+  border-bottom: 4px solid #A5ABA4;
+  margin: 20px;
+}
+.total-details{
+  padding: 25px;
+  margin: 20px;
+}
+.item-details .item{
+  margin: 30px 0;
+}
+.d-inline{
+display: inline-block;
+width: 49%;
+}
+.item-count{
+  width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    display: inline-block;
+    background-color: #ffbb00;
+    border-radius: 50%;
+    text-align: center;
+}
+.item-fl{
+  float: right;
 }
