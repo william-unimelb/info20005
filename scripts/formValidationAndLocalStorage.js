@@ -76,14 +76,18 @@ function validateForm(){
         localStorage.setItem('country', country);
         localStorage.setItem('state', state);
         localStorage.setItem('postcode', postcode);
+        window.location.href = "checkout-2";
         location.reload();
     } else {
         alert("Please enter a all fields to continue");
         location.reload();
     }
 
+    console.log("Form validated successfully");
+
     // If form is valid, advance to next page
-    window.location = "checkout-2";
+    window.location.href = "checkout-2";
+    return false;
 };
 function cvalidateForm(){
     var cardHolder = document.forms.cForm.cardHolder.value;
@@ -123,14 +127,15 @@ function cvalidateForm(){
         localStorage.setItem('cardDate', cardDate);
         localStorage.setItem('cardCVV', cardCVV);
         localStorage.setItem('cardZip', cardZip);
-        location.reload();
+        window.location.href = "checkout-3";
     } else {
         alert("Please enter a all fields to continue");
         location.reload();
     }
 
     // If form is valid, advance to next page
-    window.location = "checkout-3";
+    window.location.href = "checkout-3";
+    return false;
 };
 
 if(localStorage.getItem('fullname')){
