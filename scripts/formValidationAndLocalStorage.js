@@ -83,7 +83,7 @@ function validateForm(){
     }
 
     // If form is valid, advance to next page
-    window.location = "/checkout-2";
+    window.location = "checkout-2";
 };
 function cvalidateForm(){
     var cardHolder = document.forms.cForm.cardHolder.value;
@@ -130,7 +130,7 @@ function cvalidateForm(){
     }
 
     // If form is valid, advance to next page
-    window.location = "/checkout-3";
+    window.location = "checkout-3";
 };
 
 if(localStorage.getItem('fullname')){
