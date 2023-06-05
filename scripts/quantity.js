@@ -2,7 +2,7 @@ function adjustQuantity(inputId, amount, onUnderflow=null) {
     let input = document.getElementById(inputId);
     let newValue = Number(input.value) + amount;
     // Clamp the new quantity
-    if (newValue <= 1) {
+    if (newValue < 1) {
         newValue = 1;
         // Trigger the underflow function if it is non null
         if (onUnderflow !== null) {

@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="stylesheets/reset.css" />
   <link rel="stylesheet" href="stylesheets/styles.css" />
   <script src="scripts/formValidationAndLocalStorage.js"></script>
+  <script src="scripts/popups.js"></script>
+  <script src="scripts/cart.js"></script>
+  <script src="scripts/quantity.js"></script>
   <title>Order1</title>
 </head>
   
@@ -136,7 +139,7 @@
       <div class="overlay__exit" onclick="hideCart()"></div>
       <div class="cart stack">
         <h2 class="h2--big">Cart</h2>
-        <p id="cart-empty hide">Your cart is empty!</p>
+        <p id="cart-empty" class="hide">Your cart is empty!</p>
         <div class="stack cart__container" id="cart-container">
           <div class="stack stack--row stack--centred cart__item stack">
             <img class="cart__item__element cart__item__img" src="images/pexels-lisa-fotios-1351238.jpg">
