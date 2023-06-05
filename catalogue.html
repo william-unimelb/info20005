@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="stylesheets/reset.css" />
     <link rel="stylesheet" href="stylesheets/styles.css" />
     <script src="scripts/popups.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/quantity.js"></script>
     <title>Catalogue</title>
   </head>
   <body>
@@ -22,8 +24,9 @@
         <li>
           <a class="clickable" onclick="showSearch()"><img class="icon" src="images/icons/search.svg" alt="search"></a>
         </li>
-        <li>
+        <li class="header__cart-container">
           <a class="clickable" onclick="showCart()"><img class="icon" src="images/icons/cart.svg" alt="shopping cart"></a>
+          <p class="header__cart-container__notification hide" id="cart-notification">1</p>
         </li>
         <li class="hide--mobile">
           <a href="/"><img class="icon" src="images/icons/login.svg" alt="login"></a>
@@ -122,7 +125,7 @@
     </div>
     <!-- Overlay for product -->
     <div class="overlay overlay--center overlay--hidden" id="product-overlay" >
-      <div class="overlay__exit" onclick="hideProduct()"></div>
+      <div class="overlay__exit" onclick="hideProduct(); resetInput('product-quantity');"></div>
       <div class="sidebar-container product-page">
         <img class="sidebar-container__sidebar product-page__image" src="images/pexels-lisa-fotios-1351238.jpg">
         <div class="sidebar-container__not-sidebar product-page__description stack stack--full-width">
@@ -132,19 +135,19 @@
             <p>This toast is made with your choice of freshly baked bread, whether it's our signature sourdough and smooth ripe avacados.</p>
             <p>Vegetarian</p>
           </div>
-          <form class="stack stack--full-width product-page__quantity-form">
+          <form class="stack stack--full-width product-page__quantity-form" onsubmit="return false">
             <h2>Quantity</h2>
             <div class="stack stack--row product-page__quantity-form__container">
-              <a class="button button--narrow clickable">-10</a>
-              <a class="button button--narrow clickable">-1</a>
-              <input class="product-page__quantity-form__input">
-              <a class="button button--narrow clickable">+1</a>
-              <a class="button button--narrow clickable">+10</a>
+              <a class="button button--narrow clickable" onclick="adjustQuantity('product-quantity', -10)">-10</a>
+              <a class="button button--narrow clickable" onclick="adjustQuantity('product-quantity', -1)">-1</a>
+              <input class="product-page__quantity-form__input" type="number" min="1" value="1" required id="product-quantity">
+              <a class="button button--narrow clickable" onclick="adjustQuantity('product-quantity', 1)">+1</a>
+              <a class="button button--narrow clickable" onclick="adjustQuantity('product-quantity', 10)">+10</a>
             </div>
-            <input class="button" type="submit" value="Add to Cart">
+            <input class="button clickable" type="submit" value="Add to Cart" onclick="addToCart(); hideProduct(); resetInput('product-quantity');">
           </form>
         </div>
-        <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideProduct()">
+        <img class="overlay__close clickable" src="images/icons/close.svg" onclick="hideProduct(); resetInput('product-quantity');">
       </div>
     </div>
     <!-- Overlay for cart -->
@@ -152,20 +155,20 @@
       <div class="overlay__exit" onclick="hideCart()"></div>
       <div class="cart stack">
         <h2 class="h2--big">Cart</h2>
-        <p>Your cart is empty!</p>
-        <div class="stack cart__container">
+        <p id="cart-empty">Your cart is empty!</p>
+        <div class="stack cart__container hide" id="cart-container">
           <div class="stack stack--row stack--centred cart__item stack">
             <img class="cart__item__element cart__item__img" src="images/pexels-lisa-fotios-1351238.jpg">
             <div class="cart__item__element stack stack--distribute">
               <h2>Food Name</h2>
               <form class="stack stack--row stack--centred">
-                <img src="images/icons/add.svg" class="icon clickable">
-                <input class="cart__item__input">
-                <img src="images/icons/subtract.svg" class="icon clickable">
+                <img src="images/icons/subtract.svg" class="icon clickable" onclick="adjustQuantity('cart-quantity', -1, clearCart)">
+                <input class="cart__item__input" type="number" min="1" value="1" required id="cart-quantity">
+                <img src="images/icons/add.svg" class="icon clickable" onclick="adjustQuantity('cart-quantity', 1)">
               </form>
               <p>$12.00 ($12.00ea)</p>
             </div>
-            <img src="images/icons/delete.svg" class="icon clickable">
+            <img src="images/icons/delete.svg" class="icon clickable" onclick="clearCart(); resetInput('cart-quantity');">
           </div>
           <span class="cart__space"></span>
           <div class="stack stack--centred stack--row options-bar cart__navigation">
